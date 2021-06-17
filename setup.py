@@ -7,7 +7,7 @@ here = os.path.abspath(os.path.dirname(__file__))
 NAME = 'Specification'
 DESCRIPTION = 'Serializable rules'
 URL = 'https://github.com/utair-digital/serializable-specification'
-AUTHOR = 'UTair-digital'
+AUTHOR = 'UTair'
 REQUIRES_PYTHON = '>=3.6.0'
 VERSION = '0.0.1'
 
