@@ -110,3 +110,7 @@ spec = AndSpecification.deserialize(bmw_or_harley_transport_over_80_spec_seriali
 filtered = list(filter(spec.is_satisfied_by, transports))
 print(filtered)
 ```
+
+## License
+
+This project is licensed under the [Apache-2.0 License](LICENSE).
