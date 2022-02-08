@@ -13,12 +13,6 @@ from tests.fixtures.expected_result import (
 )
 from tests.fixtures.fixtures import generated_data
 
-"""
-править переносы
-править импорты
-переименовать функции
-"""
-
 
 def test_composit_or_and():
     """
