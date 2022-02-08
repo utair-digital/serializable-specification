@@ -1,10 +1,13 @@
 from specification import OrSpecification, AttributeSpecification
 from tests.fixtures.expected_result import (
-    specification_9_result, specification_10_result, specification_11_result)
+    or_eq_ge_result,
+    or_eq_eq_result,
+    or_eq_eq_2_result,
+)
 from tests.fixtures.fixtures import generated_data
 
 
-def test_specification_9():
+def test_or_eq_ge():
     """
     Jeep OR price>=48000
     """
@@ -12,11 +15,11 @@ def test_specification_9():
         AttributeSpecification("car", "eq", "Jeep"),
         AttributeSpecification("price", "ge", 48000),
     )
-    assert list(filter(specification.is_satisfied_by, generated_data)) == \
-           specification_9_result
+    result = list(filter(specification.is_satisfied_by, generated_data))
+    assert result == or_eq_ge_result
 
 
-def test_specification_10():
+def test_or_eq_eq():
     """
     age=18 OR Lamborghini
     """
@@ -24,11 +27,11 @@ def test_specification_10():
         AttributeSpecification("buyer.age", "eq", 18),
         AttributeSpecification("car", "eq", "Lamborghini"),
     )
-    assert list(filter(specification.is_satisfied_by, generated_data)) == \
-           specification_10_result
+    result = list(filter(specification.is_satisfied_by, generated_data))
+    assert result == or_eq_eq_result
 
 
-def test_specification_11():
+def test_or_eq_eq_2():
     """
     Sixta Goodman OR Mini
     """
@@ -36,7 +39,5 @@ def test_specification_11():
         AttributeSpecification("buyer.full_name", "eq", "Sixta Goodman"),
         AttributeSpecification("car", "eq", "Mini"),
     )
-    assert list(filter(specification.is_satisfied_by, generated_data)) == \
-           specification_11_result
-
-
+    result = list(filter(specification.is_satisfied_by, generated_data))
+    assert result == or_eq_eq_2_result
