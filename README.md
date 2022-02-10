@@ -1,5 +1,5 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-
+[![Python package](https://github.com/utair-digital/serializable-specification/actions/workflows/python-package.yml/badge.svg?branch=main)](https://github.com/utair-digital/serializable-specification/actions/workflows/python-package.yml)
 # Serializable specification
 
 ---
