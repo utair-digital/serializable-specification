@@ -1,9 +1,6 @@
 from tests.fixtures.dto import Order, Buyer
 
-
-"""
-generated_data randomly generated 
-"""
+# generated_data randomly generated
 
 generated_data = [
     Order(
