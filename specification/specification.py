@@ -77,12 +77,20 @@ class Specification(BaseSpecification):
     @classmethod
     def deserialize(cls, raw_specification: dict) -> 'Specification':
 
+        def __op_by_alias__(raw_op):
+            op_aliases_map = {
+                "gte": "ge",
+                "lte": "le",
+                "nin": "not_in"
+            }
+            return op_aliases_map.get(raw_op, raw_op)
+
         def __key_value_to_spec__(_raw_specification):
             keys = list(_raw_specification.keys())
             if all(['key' in keys, 'value' in keys, 'op' in keys]):
                 return AttributeSpecification(
                     _raw_specification['key'],
-                    _raw_specification['op'],
+                    __op_by_alias__(_raw_specification['op']),
                     _raw_specification['value'],
                     _raw_specification.get('aggregation'),
                     _raw_specification.get('discover_attribute')
@@ -96,7 +104,7 @@ class Specification(BaseSpecification):
                     elif key == 'not':
                         return NotSpecification(AttributeSpecification(
                             value['key'],
-                            value['op'],
+                            __op_by_alias__(value['op']),
                             value['value'],
                             value.get('aggregation'),
                             value.get('discover_attribute'))
