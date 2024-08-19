@@ -9,7 +9,7 @@ DESCRIPTION = 'Serializable rules'
 URL = 'https://github.com/utair-digital/serializable-specification'
 AUTHOR = 'UTair'
 REQUIRES_PYTHON = '>=3.6.0'
-VERSION = '0.0.1'
+VERSION = '0.0.2'
 
 # Load the package's __version__.py module as a dictionary.
 about = {}
